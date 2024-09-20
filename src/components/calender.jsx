@@ -1,62 +1,70 @@
-import React from 'react'
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
+'use client';
+
+import React, { useState } from 'react';
 import dayjs from 'dayjs';
-import Badge from '@mui/material/Badge';
-import { selectClasses } from '@mui/material';
-import { PickersDay } from '@mui/x-date-pickers/PickersDay';
 
-const eventDates = [3, 7, 15, 20, 25];
+const Calendar = ({ selectedDate, setSelectedDate }) => {
+  const startDate = dayjs('2024-09-20');
+  const endDate = startDate.add(35, 'day');
+  const daysInMonth = endDate.diff(startDate, 'day');
 
-function EventDay(props) {
-  const { day, outsideCurrentMonth, ...other } = props;
-  
-  // Check if the day is an event date
-  const isEventDay = eventDates.includes(day.date());
+  const clickableDates = [
+    '2024-09-26',
+    '2024-10-01',
+    '2024-10-04',
+    '2024-10-05'
+  ];
+
+  const isClickable = (date) => {
+    return clickableDates.includes(date.format('YYYY-MM-DD'));
+  };
+
+  const renderCalendarDays = () => {
+    const days = [];
+    let currentDate = startDate;
+
+    for (let i = 0; i < daysInMonth; i++) {
+      const day = currentDate.format('D');
+      const date = currentDate.format('YYYY-MM-DD');
+      const clickable = isClickable(currentDate);
+      const isSelected = selectedDate === date;
+
+      days.push(
+        <div
+          key={date}
+          className={`calendar-day ${clickable ? 'clickable' : 'disabled'} ${isSelected ? 'selected' : ''}`}
+          onClick={clickable ? () => handleDateClick(date) : undefined}
+        >
+          {day}
+        </div>
+      );
+      currentDate = currentDate.add(1, 'day');
+    }
+
+    return days;
+  };
+
+  const handleDateClick = (date) => {
+    setSelectedDate(date);
+  };
 
   return (
-    <Badge
-      key={day.toString()}
-      overlap="circular"
-      badgeContent={isEventDay ? 'badges' : undefined} // Add badge for event dates
-    >
-      <PickersDay {...other} outsideCurrentMonth={outsideCurrentMonth} day={day} />
-    </Badge>
+    <div className="calendar">
+        <div className="calendar-month">September - October 2024</div>
+      <div className="calendar-header">
+        <div>S</div>
+        <div>M</div>
+        <div>T</div>
+        <div>W</div>
+        <div>T</div>
+        <div>F</div>
+        <div>S</div>
+      </div>
+      <div className="calendar-body">
+        {renderCalendarDays()}
+      </div>
+    </div>
   );
-}
+};
 
-
-const calender = ({ selectedDate, setSelectedDate,eventDates}) => {
-  // const rendersDay = (day, _value, DayComponentProps) => {
-  //   const isEventDay = eventDates.some((eventDate) => dayjs(eventDate).isSame(day, 'day'));
-  //   console.log("Is event day:", isEventDay);
-  //   return (
-  //     <PickersDay
-  //       {...DayComponentProps}
-        
-  //       sx={{
-  //         // backgroundColor: isEventDay ? '#ffffff' : '', // Highlight event dates with a custom background
-  //         // color: isEventDay ? '#2F0101' : '', // Change text color if highlighted
-  //         backgroundColor: day.isSame(dayjs(), 'day') ? '#C09A37' : '',
-  //       }}
-  //     />
-  //   );
-  // };
-  return (
-    
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <StaticDatePicker 
-      orientation="portrait"
-      value={selectedDate}
-      onChange={(newValue) => setSelectedDate(newValue)}
-      renderDay={(day, _value, DayComponentProps) => (
-        <EventDay {...DayComponentProps} day={day} /> // Use custom event day renderer
-      )}
-      />
-      
-    </LocalizationProvider>
-  )
-}
-
-export default calender
+export default Calendar;

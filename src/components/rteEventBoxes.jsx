@@ -3,10 +3,12 @@ import React, { useState } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import _gsap from 'gsap/gsap-core';
+import BottomDrawer from './rteDrawer';
 
 
-const rteEventBoxes = ({ events, selectedDate, setActiveBox, activeBox, isEventHighlighted }) => {
-
+const rteEventBoxes = ({ events, selectedDate, setActiveBox, activeBox, isEventHighlighted}) => {
+const [drawerOpen, setDrawerOpen] = useState(false);
+const [currentEvent, setCurrentEvent] = useState(null);
 // Event click and double click functions
   const [clickCount, setClickCount] = useState(0);
   const handleClick = (index) => {
@@ -14,10 +16,16 @@ const rteEventBoxes = ({ events, selectedDate, setActiveBox, activeBox, isEventH
     setActiveBox(index);
   };
 
-  const handleDoubleClick = (index) => {
+  const handleDoubleClick = (event) => {
     setClickCount(0);
-    window.location.href = `/event/${index}`;
+    setCurrentEvent(event);
+    setDrawerOpen(true); 
   };
+  const closeDrawer = () => {
+    setDrawerOpen(false);
+    setCurrentEvent(null);
+  };
+
 
   // Floating animations
   useGSAP(() => {
@@ -47,12 +55,14 @@ const rteEventBoxes = ({ events, selectedDate, setActiveBox, activeBox, isEventH
           key={index}
           className={`event-wrapper flex justify-center align-middle items-center ${1 === index || 3 === index? 'event-grp1' : 'event-grp2'} ${isEventHighlighted(event.date) ? 'highlighted' : ''}`}
           onClick={() => handleClick(index)}
-          onDoubleClick={() => handleDoubleClick(index)}
+          onDoubleClick={() => handleDoubleClick(event)}
         >
           <div className="event-holder"></div>
           <div className={`${activeBox === index || isEventHighlighted(event.date) ? 'remove' : 'cover'}`}></div>
+          
         </div>
       ))}
+      <BottomDrawer isOpen={drawerOpen} onClose={closeDrawer} event={currentEvent} />
     </div>
   );
 };
