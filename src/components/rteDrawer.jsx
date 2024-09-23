@@ -4,12 +4,12 @@ import { useGSAP } from '@gsap/react';
 import _gsap from 'gsap/gsap-core';
 
 const BottomDrawer = ({ isOpen, onClose, event }) => {
-  // GSAP to close
-  useGSAP(() => {
-    gsap.to('.close', { 
-      height: 0, 
-    });
-  },);
+  // // GSAP to close
+  // useGSAP(() => {
+  //   gsap.to('.close', { 
+  //     height: 0, 
+  //   });
+  // },);
   let formattedDate = 'No Date Available';
   if (event && event.date) {
     if (typeof event.date === 'object' && typeof event.date.format === 'function') {

@@ -6,14 +6,15 @@ import _gsap from 'gsap/gsap-core';
 import BottomDrawer from './rteDrawer';
 
 
-const rteEventBoxes = ({ events, selectedDate, setActiveBox, activeBox, isEventHighlighted}) => {
+const rteEventBoxes = ({ events, selectedDate, setSelectedDate, setActiveBox, activeBox, isEventHighlighted}) => {
 const [drawerOpen, setDrawerOpen] = useState(false);
 const [currentEvent, setCurrentEvent] = useState(null);
 // Event click and double click functions
   const [clickCount, setClickCount] = useState(0);
-  const handleClick = (index) => {
+  const handleClick = (event,index) => {
     setClickCount(clickCount + 1);
     setActiveBox(index);
+    setSelectedDate(event.date.format('YYYY-MM-DD'));
   };
 
   const handleDoubleClick = (event) => {
@@ -54,7 +55,7 @@ const [currentEvent, setCurrentEvent] = useState(null);
         <div
           key={index}
           className={`event-wrapper flex justify-center align-middle items-center ${1 === index || 3 === index? 'event-grp1' : 'event-grp2'} ${isEventHighlighted(event.date) ? 'highlighted' : ''}`}
-          onClick={() => handleClick(index)}
+          onClick={() => handleClick(event,index)}
           onDoubleClick={() => handleDoubleClick(event)}
         >
           <div className="event-holder"></div>

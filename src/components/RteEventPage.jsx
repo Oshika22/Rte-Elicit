@@ -8,8 +8,6 @@ const RteEventPage = () => {
 // selecting dates
   const [selectedDate, setSelectedDate] = useState('2024-09-26');
   const [activeBox, setActiveBox] = useState(null);
-  const [drawerOpen, setDrawerOpen] = useState(false);
-  const [currentEvent, setCurrentEvent] = useState(null);
   const events = [
     { id: 0, date: dayjs('2024-09-26') },
     { id: 1, date: dayjs('2024-10-01') },
@@ -38,6 +36,7 @@ const RteEventPage = () => {
       <EventBoxes 
         events={events}
         selectedDate={selectedDate}
+        setSelectedDate={setSelectedDate}
         setActiveBox={setActiveBox}
         activeBox={activeBox}
         isEventHighlighted={isEventHighlighted}
