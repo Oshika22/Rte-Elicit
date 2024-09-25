@@ -3,12 +3,13 @@ import React, { useState } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import _gsap from 'gsap/gsap-core';
-import BottomDrawer from './rteDrawer';
-
+// import BottomDrawer from './rteDrawer';
+import EventPopup from './rtePopup';
 
 const rteEventBoxes = ({ events, selectedDate, setSelectedDate, setActiveBox, activeBox, isEventHighlighted}) => {
-const [drawerOpen, setDrawerOpen] = useState(false);
+// const [drawerOpen, setDrawerOpen] = useState(false);
 const [currentEvent, setCurrentEvent] = useState(null);
+const [popupOpen, setPopupOpen] = useState(false);
 // Event click and double click functions
   const [clickCount, setClickCount] = useState(0);
   const handleClick = (event,index) => {
@@ -20,12 +21,17 @@ const [currentEvent, setCurrentEvent] = useState(null);
   const handleDoubleClick = (event) => {
     setClickCount(0);
     setCurrentEvent(event);
-    setDrawerOpen(true); 
+    // setDrawerOpen(true); 
+    setPopupOpen(true);
   };
-  const closeDrawer = () => {
-    setDrawerOpen(false);
+  const closePopup = () => {
+    setPopupOpen(false);
     setCurrentEvent(null);
   };
+  // const closeDrawer = () => {
+  //   setDrawerOpen(false);
+  //   setCurrentEvent(null);
+  // };
 
 
   // Floating animations
@@ -63,7 +69,8 @@ const [currentEvent, setCurrentEvent] = useState(null);
           
         </div>
       ))}
-      <BottomDrawer isOpen={drawerOpen} onClose={closeDrawer} event={currentEvent} />
+      {/* <BottomDrawer isOpen={drawerOpen} onClose={closeDrawer} event={currentEvent} /> */}
+      <EventPopup isOpen={popupOpen} onClose={closePopup} event={currentEvent} />
     </div>
   );
 };
