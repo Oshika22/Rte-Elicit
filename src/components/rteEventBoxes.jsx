@@ -1,13 +1,14 @@
 // components/EventBoxes.jsx
 import React, { useState } from 'react';
+import moment from 'moment';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import _gsap from 'gsap/gsap-core';
-// import BottomDrawer from './rteDrawer';
 import EventPopup from './rtePopup';
+//importing images
+import eventImg1 from '../assets/rte_event_1.jpeg'
 
 const rteEventBoxes = ({ events, selectedDate, setSelectedDate, setActiveBox, activeBox, isEventHighlighted}) => {
-// const [drawerOpen, setDrawerOpen] = useState(false);
 const [currentEvent, setCurrentEvent] = useState(null);
 const [popupOpen, setPopupOpen] = useState(false);
 // Event click and double click functions
@@ -20,21 +21,28 @@ const [popupOpen, setPopupOpen] = useState(false);
 
   const handleDoubleClick = (event) => {
     setClickCount(0);
-    setCurrentEvent(event);
-    // setDrawerOpen(true); 
+    setCurrentEvent(event); 
     setPopupOpen(true);
   };
   const closePopup = () => {
     setPopupOpen(false);
     setCurrentEvent(null);
   };
-  // const closeDrawer = () => {
-  //   setDrawerOpen(false);
-  //   setCurrentEvent(null);
-  // };
 
-
-  // Floating animations
+// Event data
+  const eventData = {
+    name: 'Keyboard Warriors',
+    poster: eventImg1,
+    description: 'Exhilarating competition & monkey typing combined - this is the perfect getaway for testing your typing to the limit',
+    date: moment('2024-09-26'),
+    photos: [
+      'path/to/photo1.jpg',
+      'path/to/photo2.jpg',
+      'path/to/photo3.jpg',
+    ],
+  };
+  
+// Floating animations
   useGSAP(() => {
           gsap.to('.event-grp1', { 
           y: 15, 
@@ -64,13 +72,13 @@ const [popupOpen, setPopupOpen] = useState(false);
           onClick={() => handleClick(event,index)}
           onDoubleClick={() => handleDoubleClick(event)}
         >
-          <div className="event-holder"></div>
+          <div className="event-holder">
+            <img src={eventData.poster} alt={eventData.name} className="event-img" />
+          </div>
           <div className={`${activeBox === index || isEventHighlighted(event.date) ? 'remove' : 'cover'}`}></div>
-          
         </div>
       ))}
-      {/* <BottomDrawer isOpen={drawerOpen} onClose={closeDrawer} event={currentEvent} /> */}
-      <EventPopup isOpen={popupOpen} onClose={closePopup} event={currentEvent} />
+      <EventPopup isOpen={popupOpen} onClose={closePopup} event={eventData} />
     </div>
   );
 };
