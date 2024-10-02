@@ -8,7 +8,7 @@ const EventPage = () => {
       setIsElicitPage(!isElicitPage);
     };
   return (
-    <div>
+    <div className='event-page'>
         <div className="toggle-container" onClick={togglePage}>
             <div className={`toggle ${isElicitPage ? 'active' : ''}`}>
                 <div className="slider">

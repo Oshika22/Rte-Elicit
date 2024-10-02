@@ -6,10 +6,7 @@ import { useGSAP } from '@gsap/react';
 import _gsap from 'gsap/gsap-core';
 import EventPopup from './rtePopup';
 //importing images
-import eventImg1 from '../assets/rte_event_1.jpeg';
-import decode from '../assets/decode_rte.png';
-import futsal from '../assets/futsal_rte.png';
-import secret from '../assets/secret_society.jpeg';
+import { eventImg1, decode, futsal, secret } from '../assets/rteimages';
 
 const rteEventBoxes = ({ events, selectedDate, setSelectedDate, setActiveBox, activeBox, isEventHighlighted}) => {
 const [currentEvent, setCurrentEvent] = useState(null);

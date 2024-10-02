@@ -27,7 +27,9 @@ const RteEventPage = () => {
 
   return (
     <div className="flex flex-col align-middle items-center justify-center container">
-
+      <h1 className="text-6xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-700 to-fuchsia-500">
+        ROAD TO ELICIT EVENTS
+      </h1>
       <div className="calender-container">
         <Calender selectedDate={selectedDate} setSelectedDate={setSelectedDate}/>
       </div>

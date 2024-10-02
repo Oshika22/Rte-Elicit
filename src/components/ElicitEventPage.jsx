@@ -1,28 +1,64 @@
 import React from 'react';
-import {Events} from '../assets/images'
+import {Events,Drone,ElicitExpo,Robo,Stock} from '../assets/images'
 
 const events = [
   {
     id: 1,
-    title: 'Decode',
+    title: 'Speaker Talk',
     image: Events,
     description: 'Unravel the mysteries of coding and algorithms in this exciting event.'
   },
   {
     id: 2,
-    title: 'Futsal',
-    image: Events,
+    title: 'Stock Market Showdown',
+    image: Stock,
     description: 'Experience the thrill of fast-paced indoor soccer in our Futsal tournament.'
   },
   {
     id: 3,
-    title: 'Elevate',
+    title: 'HACKS 9.0',
     image: Events,
-    description: 'Take your skills to new heights with our professional development workshops.'
+    description: "A 48-HOUR HACKATHON, PREVIOUS EDITIONS OF WHICH HAVE SEEN OVER 900 PARTICIPANTS PAN-INDIA."
   },
   {
     id: 4,
-    title: 'Hella no',
+    title: 'Drone Exp Zone',
+    image: Drone,
+    description: "AN EXHILARATING HIGH-SPEED COMPETITION WHERE PARTICIPANTS PILOT DRONES THROUGH CHALLENGING OBSTACLE COURSES IN A TEST OF SKILL AND PRECISION.",
+  },
+  {
+    id: 5,
+    title: 'Robo Exp Zone',
+    image: Robo,
+    description: 'Challenge conventional thinking and push boundaries in this unconventional event.'
+  },
+  {
+    id: 6,
+    title: 'DIFFUSE',
+    image: Events,
+    description: "DIFFUSE IS A THRILLING EVENT WHERE PARTICIPANTS RACE AGAINST TIME TO DISASSEMBLE A SIMULATED BOMB USING HARDWARE ELEMENTS LIKE ARDUINOS, LEDS, AND JUMPER WIRES.",
+  },
+  {
+    id: 7,
+    title: 'GAMERS ASYLUM',
+    image: Events,
+    description: "GAMERS ASYLUM IS A COMPETITIVE EVENT WHERE COLLEGE STUDENTS FACE OFF IN POPULAR VIDEO GAMES, HIGHLIGHTING THEIR SKILLS AND PASSION FOR GAMING.",
+  },
+  {
+    id: 8,
+    title: 'ELICIT EXPO',
+    image: ElicitExpo,
+    description: "THE ULTIMATE EXHIBITION OF INNOVATION! A SHOWCASE OF EVERYTHING ROBOTICS",
+  },
+  {
+    id: 9,
+    title: 'Kagglethon',
+    image: Events,
+    description: "A DATA SCIENCE SHOWDOWN FOR MACHINE LEARNING MASTERS WHICH ALLOWS PATICIPANTS TO COMPETE IN SOLVING MACHINE LEARNING PROBLEMS",
+  },
+  {
+    id: 10,
+    title: 'CODERS FEUD',
     image: Events,
     description: 'Challenge conventional thinking and push boundaries in this unconventional event.'
   },
@@ -35,11 +71,11 @@ const EventPanel = ({ title, image, description }) => (
     </div>
     <div className="w-1/3 relative">
       <div className="absolute inset-0 flex items-center justify-center p-4 bg-black transition-opacity duration-300 group-hover:opacity-0">
-        <h3 className="text-red-500 text-3xl font-bold text-center">{title}</h3>
+        <h3 className="text-fuchsia-500 text-3xl font-bold text-center">{title}</h3>
       </div>
       <div className="absolute inset-0 flex flex-col items-center justify-center p-4 bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <p className="text-white text-sm font-bold text-center mb-4">{description}</p>
-        <button className="bg-red-500 text-white px-5 py-2 font-bold rounded-xl hover:bg-red-600 transition-colors duration-300 text-xs">
+        <button className="bg-fuchsia-500 text-white px-5 py-2 font-bold rounded-xl hover:bg-fuchsia-700 transition-colors duration-300 text-xs">
           Learn More
         </button>
       </div>
@@ -49,8 +85,8 @@ const EventPanel = ({ title, image, description }) => (
 
 export default function ElicitEvents() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-red-800 to-black p-8">
-      <h1 className="text-6xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-yellow-500">
+    <div className="min-h-screen bg-black p-8">
+      <h1 className="text-6xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r  from-fuchsia-700 to-fuchsia-500">
         ELICIT EVENTS
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
