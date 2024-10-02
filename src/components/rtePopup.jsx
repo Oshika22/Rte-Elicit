@@ -41,12 +41,17 @@ const EventPopup = ({ isOpen, onClose, event }) => {
           <div className="event-description">
             <p>{event.description}</p>
           </div>
-
+          <div className="event-Location">
+            <p>Location: {event.Location}</p>
+          </div>
+          <div className="event-prize">
+            <p>Prize Pool: {event.PrizePool}</p>
+          </div>
           {/* Event Date */}
           <p><strong>Event Date:</strong> {event.date.format('YYYY-MM-DD')}</p>
 
           {/* Photos from last year */}
-          {event.photos && event.photos.length > 0 && (
+          {/* {event.photos && event.photos.length > 0 && (
             <div className="event-photos">
               <div className="photos-gallery">
                 {event.photos.map((photo, index) => (
@@ -56,7 +61,7 @@ const EventPopup = ({ isOpen, onClose, event }) => {
                 ))}
               </div>
             </div>
-          )}
+          )} */}
           <button className="registerBtn">Register</button>
         </div>
       </div>

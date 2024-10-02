@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import Calender from './calendar';
 import EventBoxes from './rteEventBoxes';
 import dayjs from 'dayjs';
@@ -11,7 +10,7 @@ const RteEventPage = () => {
   const events = [
     { id: 0, date: dayjs('2024-09-26') },
     { id: 1, date: dayjs('2024-10-01') },
-    { id: 2, date: dayjs('2024-10-04') },
+    { id: 2, date: dayjs('2024-10-02') },
     { id: 3, date: dayjs('2024-10-05') },
   ];
 // Selecting Dates and event hightlight
@@ -29,7 +28,7 @@ const RteEventPage = () => {
   return (
     <div className="flex flex-col align-middle items-center justify-center container">
 
-      <div className="calender-containerLalitBhaiya">
+      <div className="calender-container">
         <Calender selectedDate={selectedDate} setSelectedDate={setSelectedDate}/>
       </div>
 

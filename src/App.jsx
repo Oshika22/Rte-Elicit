@@ -1,10 +1,10 @@
-import { useState } from 'react'
-import Calender from './components/calendar'
-import RteEventPage from './components/RteEventPage';
+import React, { useState, useEffect } from 'react';
+import EventPage from './components/EventPage';
 
 function App() {
   return (
-    <div><RteEventPage/> 
+    <div>
+      <EventPage/> 
     </div>
   )
 }
