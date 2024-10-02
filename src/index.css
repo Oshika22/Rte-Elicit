@@ -38,7 +38,7 @@
 .cover{
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #b521ff 0%, rgb(204, 204, 204) 100%);
+  background: linear-gradient(135deg, #8e00e7 0%, rgb(158, 158, 158) 100%);
   opacity: 70%;
 }
 
@@ -54,16 +54,16 @@
 
 .calendar{
   margin-top: 50px;
-  box-shadow: 0px 0px 15px 0px #a600cb;
+  box-shadow: 0px 0px 15px 0px #ac27ff;
   width: 320px;
   height: 400px;
-  border: 1px solid #f2b2ffa8;
+  border: 1px solid #e4b2ffa8;
   backdrop-filter: blur(10px);
   background-color: #100014;
 }
 .calendar-month{
   height: 70px;
-  color: #c502f1;
+  color: #9902f1;
   font-size: 20px;
   font-weight: 700;
   display: flex;
@@ -118,13 +118,13 @@
 
 
 .calendar-day.clickable:hover {
-  background-color: #a600cb98;
+  background-color: #6500cb98;
   color: rgb(255, 255, 255);
   transition: height 0.3s ease;
 }
 
 .calendar-day.selected {
-  background-color: #a600cb;
+  background-color: #8b00cb;
   color: white;
 }
 
@@ -162,7 +162,7 @@
   justify-content: space-between;
   align-items: center;
   /* color: #b50000; */
-  background: linear-gradient(to right, #c800e7, #ffeadd,#ffffff, #ffffff,#ffffff);
+  background: linear-gradient(to right, #9e00e7, #ffeadd,#ffffff, #ffffff,#ffffff);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   font-size: 30px;
@@ -200,20 +200,20 @@
   scale: 1.05;
 }
 .registerBtn{
-  border: 2px solid #ba24fa;
+  border: 2px solid #af24fa;
   padding: 5px;
   margin: 20px;
   font-size: 20px;
-  background: linear-gradient(to right, #a600cb, #ffeadd);
+  background: linear-gradient(to right, #9e00e7, #ffeadd);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   border-radius: 10px;
 }
 .registerBtn:hover{
-  background: linear-gradient(to right, #fbfbfb, #a600cb);
+  background: linear-gradient(to right, #fbfbfb, #9e00e7);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-  border: 2px solid #d787f9;
+  border: 2px solid #c85bff;
 }
 .popup-container::-webkit-scrollbar{
   width: 5px;
@@ -234,7 +234,7 @@
   width: 200px; 
   height: 60px; 
   background-color: #000000; 
-  box-shadow: 0 2px 5px #c227ff;
+  box-shadow: 0 2px 5px #ac27ff;
   border-radius: 20px; 
   cursor: pointer; 
   transition: background-color 0.3s ease; 
@@ -250,10 +250,10 @@
   left: 0;
   width: 100px; 
   height: 59px; 
-  background: linear-gradient(145deg, #b839e6, #8606a3);
+  background: linear-gradient(145deg, #9b39e6, #6906a3);
   border-radius: 20%; 
   transition: transform 0.3s ease; 
-  box-shadow: 0 2px 5px #c227ff;
+  box-shadow: 0 2px 5px #ac27ff;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -71,12 +71,12 @@ const EventPanel = ({ title, image, description }) => (
     </div>
     <div className="w-1/3 relative">
       <div className="absolute inset-0 flex items-center justify-center p-4 bg-black transition-opacity duration-300 group-hover:opacity-0">
-        <h3 className="text-fuchsia-500 text-3xl font-bold text-center">{title}</h3>
+        <h3 className="text-purple-500 text-3xl font-bold text-center">{title}</h3>
       </div>
       <div className="absolute inset-0 flex flex-col items-center justify-center p-4 bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <p className="text-white text-sm font-bold text-center mb-4">{description}</p>
-        <button className="bg-fuchsia-500 text-white px-5 py-2 font-bold rounded-xl hover:bg-fuchsia-700 transition-colors duration-300 text-xs">
-          Learn More
+        <button className="bg-purple-500 text-white px-5 py-2 font-bold rounded-xl hover:bg-purple-700 transition-colors duration-300 text-xs">
+          Register
         </button>
       </div>
     </div>
@@ -86,7 +86,7 @@ const EventPanel = ({ title, image, description }) => (
 export default function ElicitEvents() {
   return (
     <div className="min-h-screen bg-black p-8">
-      <h1 className="text-6xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r  from-fuchsia-700 to-fuchsia-500">
+      <h1 className="text-6xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r  from-purple-700 to-purple-500">
         ELICIT EVENTS
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
