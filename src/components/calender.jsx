@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import dayjs from 'dayjs';
 
 const Calendar = ({ selectedDate, setSelectedDate }) => {
-  const startDate = dayjs('2024-09-20');
+  const startDate = dayjs('2024-09-22');
   const endDate = startDate.add(35, 'day');
   const daysInMonth = endDate.diff(startDate, 'day');
 
