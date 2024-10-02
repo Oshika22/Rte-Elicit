@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Calender from './components/calender'
+import Calender from './components/calendar'
 import RteEventPage from './components/RteEventPage';
 
 function App() {

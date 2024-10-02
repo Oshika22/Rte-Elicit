@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import Calender from './calender';
+import Calender from './calendar';
 import EventBoxes from './rteEventBoxes';
 import dayjs from 'dayjs';
 
