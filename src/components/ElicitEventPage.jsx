@@ -65,16 +65,16 @@ const events = [
 ];
 
 const EventPanel = ({ title, image, description }) => (
-  <div className="bg-black rounded-lg overflow-hidden flex transition-all duration-200 hover:scale-125 group">
-    <div className="w-2/3">
+  <div className="bg-black rounded-lg overflow-hidden flex transition-all duration-200 hover:scale-110 m-30 group">
+    <div className="w-2/4 h-30">
       <img src={image} alt={title} className="w-full h-full object-cover" />
     </div>
-    <div className="w-1/3 relative">
+    <div className="w-2/4 relative">
       <div className="absolute inset-0 flex items-center justify-center p-4 bg-black transition-opacity duration-300 group-hover:opacity-0">
         <h3 className="text-purple-500 text-3xl font-bold text-center">{title}</h3>
       </div>
       <div className="absolute inset-0 flex flex-col items-center justify-center p-4 bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <p className="text-white text-sm font-bold text-center mb-4">{description}</p>
+        <p className="text-white text-xs font-bold text-center mb-4">{description}</p>
         <button className="bg-purple-500 text-white px-5 py-2 font-bold rounded-xl hover:bg-purple-700 transition-colors duration-300 text-xs">
           Register
         </button>

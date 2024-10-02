@@ -1,4 +1,4 @@
-import Events from './Events.jpg'
+import Events from './Events.jpeg'
 import Drone from './DRONE.png'
 import ElicitExpo from './elicit_expo.png'
 import Asylum from './Asylum.png'
