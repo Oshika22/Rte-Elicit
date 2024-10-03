@@ -12,7 +12,7 @@ const events = [
     id: 2,
     title: 'Stock Market Showdown',
     image: Stock,
-    description: 'Experience the thrill of fast-paced indoor soccer in our Futsal tournament.'
+    description: "The ultimate Bull vs. Bear brawl is back! The Stock Market Showdown at Elicit '24 is bigger, bolder, and more intense than ever!"
   },
   {
     id: 3,
